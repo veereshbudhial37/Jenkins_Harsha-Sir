@@ -13,7 +13,7 @@ pipeline {
         stage('TEST') {
             steps{
                 sh '''
-                    sleep 5
+                    sleep 6
                     echo "This is a TEST stage"
                 '''
             }
