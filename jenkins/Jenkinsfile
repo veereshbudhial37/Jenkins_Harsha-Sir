@@ -23,7 +23,7 @@ pipeline {
         }
 
         stage('STAGE3') {
-            agent {label 'slave1'}
+            agent {label 'slave3'}
             steps{
                 sh '''
                     sleep 5
@@ -33,7 +33,7 @@ pipeline {
         }
         
         stage('STAGE4') {
-            agent {label 'slave1'}
+            agent {label 'slave3'}
             steps{
                 sh '''
                     sleep 5
@@ -42,7 +42,7 @@ pipeline {
             }
         } 
        stage('STAGE5') {
-           agent {label 'slave2'}
+           agent {label 'slave4'}
             steps{
                 sh '''
                     sleep 5
