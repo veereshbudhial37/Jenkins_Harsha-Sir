@@ -3,11 +3,11 @@ pipeline {
     
        parameters {
   string defaultValue: 'main', name: 'BRANCH', trim: true
-}
+                    }
     
     environment {
         BRANCH_NAME = "${BRANCH}"
-}
+                }
     
  
     stages{
@@ -19,8 +19,8 @@ pipeline {
                     sleep 5
                     echo "This is a $BRANCH_NAME"
                 '''
-            }
-        }
+                 }
+                      }
 
         stage('STAGE2') {
             agent {label 'master'}
@@ -32,25 +32,30 @@ pipeline {
             }
         }
 
+        
+        
+        
         stage('STAGE3') {
             agent {label 'slave3'}
             
             parallel{
                 
-                stage('test on linux')
+                stage('test on linux'){
             steps{
                 sh '''
                     sleep 5
                     echo "This is a linux machine"
                 '''
-            }
+                  }
+                }
                 
-                stage('test on windows')
+                stage('test on windows'){
             steps{
                 sh '''
                     sleep 5
                     echo "This is a windows"
                 '''
+                }
                 }
                 
                 
