@@ -36,7 +36,7 @@ pipeline {
         
         
         stage('STAGE3') {
-            agent {label 'slave3'}
+            
             
             parallel{
                 
